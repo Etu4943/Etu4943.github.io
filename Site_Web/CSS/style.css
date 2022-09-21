@@ -1,0 +1,144 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+header, footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #FF5959;
+    /*font-family: 'Audiowide', cursive;*/
+    font-family: 'Aldrich', sans-serif;
+    font-size: 20px;
+    padding: 10px 40px;
+}
+
+.logo_link{
+    display: flex;
+    align-items: center;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+span.span_logo{
+    height: 280px;
+    width: 240px;
+    margin-right: 20px;
+    float: left;
+    border-radius: 10px;
+}
+div.article:nth-child(even) span.span_logo{
+    float: right;
+    margin-left: 20px;
+    margin-right: 0px;
+}
+
+#profile_picture{
+    background-image: url("../IMG/profile.jpeg");
+    background-size: cover;
+}
+
+#programming{
+    background-image: url("../IMG/vs_studio.png");
+    background-size:cover;
+    background-position: left;
+}
+
+#powerpoint{
+    background-image: url("../IMG/powerpoint.png");
+    background-size: cover;
+}
+
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+
+#langues{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+}
+
+#troisieme_element{
+    width: 33%;
+}
+
+#langues ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+
+#langues ul li{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.articles_wrapper{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.articles_wrapper div{
+    padding: 0 40px;
+    font-size: 20px;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.article_content{
+    /* Donner un effet d'ombre aux zones de text à coté des images, sauf que pour l'instant l'image "flotte" et donc le texte continue en dessous */
+}
+
+span.line{
+    width: 40%;
+    height: 1px;
+    background-color: rgba(103, 100, 100, 0.513);
+    display: flex;
+    margin-left: 30%;
+    margin-top: 70px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+nav ul li{
+    margin-left: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.articles_wrapper a{
+    text-decoration:underline;
+    color: #0071B9;
+}
+
+p > a:hover{
+    color: #663366;
+}
+
+a:hover{
+    color : yellow;
+}
+
