@@ -1,6 +1,7 @@
 <!Doctype html>
 <html>
     <head>
+        <script src="rdv.js"></script>
         <style>
             /* body{
                 height: 100%;
@@ -23,8 +24,38 @@
         </header>
 
         <div class="content_wrapper">
-            <span class="gear_logo" ></span>
+            <div class="prise_rdv">
+                    <h3>Pour le moment, c'est par ici que ça se passe !</h3>
+                <form action="#" method="POST" class="form_rdv">
+                    <input type="text" placeholder="Prénom" required>
+                    <input type="text" placeholder="Nom" required>
+                    <input type="email" placeholder="Adresse mail" required>
+                    <label for="domain"></label>
+                    <select name="domain" id="domain" required>
+                        <option value="" selected>Choisir un domaine...</option>
+                        <option value="assistance">Assistance Informatique</option>
+                        <option value="code_lesson">Lesson de code</option>
+                        <option value="powerpoint">Aide powerpoint</option>
+                        <option value="pc_building">Montage PC</option>
+                        <option value="other">Autre</option>
+                    </select>
+                    <span class="date_hour">
+                        <input type="date" id="inpute_date" onchange="verifJour()">
+                        <select name="hour" id="hour" required>
+                        </select>
+                    </span>
+                    
+                    <div class="submit_reset">
+                        <input type="reset">
+                        <input type="submit">
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="gear">
+                <span class="gear_logo" ></span>
             <h3>Cette page est en construction !</h3>
+            </div>
         </div>
 
         <footer>
