@@ -54,8 +54,3 @@ span.gear_logo{
       transform: rotate(359deg);
     }
   }
-
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-  

@@ -1,7 +1,7 @@
 function verifJour(){
     let dateObtenue = document.getElementById("inpute_date").value;
     let nouvelleDate = new Date(dateObtenue);
-    boucleAffichageHeure(nouvelleDate.getDay() == 6 || nouvelleDate.getDay() == 0)
+    boucleAffichageHeure(nouvelleDate.getDay() == 6 || nouvelleDate.getDay() == 0);
 }
 
 function boucleAffichageHeure(estWeekEnd){
