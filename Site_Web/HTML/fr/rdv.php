@@ -19,8 +19,16 @@
                 $sql = "SELECT date_bdd FROM rendez_vous";
 
                 $requete = $bdd->query($sql);
-                $dates_deja_prises = $requete->fetch();
-                var_dump($dates_deja_prises[0]);
+                $dates_deja_prises = $requete->fetchAll();
+                // var_dump($dates_deja_prises);
+
+                echo "<script>let datesPrisesJS = new Array();\n";
+                foreach($dates_deja_prises as $dateEnCours){
+                   echo"datesPrisesJS.push('".$dateEnCours[0]."');\n";
+                }
+                echo "</script>";
+                // echo "<script>let datesPrises = new Array; datesPrises =".$dates_deja_prises.";</script>";
+                
 
             }catch(PDOException $e){
                 die($e->getMessage());
@@ -28,7 +36,7 @@
         ?>
 
         <script>
-          
+
         </script>
         
         <link rel="stylesheet" href="../../CSS/style.css">
