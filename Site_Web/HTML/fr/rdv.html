@@ -9,6 +9,7 @@
             } */
         </style>
         <link rel="stylesheet" href="../../CSS/style.css">
+        <link rel="stylesheet" href="../../CSS/rdv.css">
     </head>
     <body>
         <header>
@@ -30,7 +31,13 @@
                     <input type="text" placeholder="Prénom" required>
                     <input type="text" placeholder="Nom" required>
                     <input type="email" placeholder="Adresse mail" required>
-                    <label for="domain"></label>
+                    <input type="email" placeholder="Adresse mail" required>
+                    <span class="num_phone">
+                        <select name="indicatif_international" id="indicatif_international">
+                            <option value="be" selected>+32</option>
+                            <option value="fr">+33</option>
+                        </select>
+                        <input type="number" required ></span>
                     <select name="domain" id="domain" required>
                         <option value="" selected>Choisir un domaine...</option>
                         <option value="assistance">Assistance Informatique</option>
