@@ -1,0 +1,64 @@
+/* Design « planning mural » : grille à traits fins, bandes de couleur, aucune ombre. */
+:root {
+  --page:#e9ecf1; --feuille:#fdfdfe; --encre:#1b2a41; --gris:#6b7587; --trait:#b9c0cc;
+  --exam:#c62828; --exam-fond:#fbe3e3; --auj-fond:#fff0a8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --page:#10161f; --feuille:#182230; --encre:#e6ebf3; --gris:#93a0b4; --trait:#33425a; --exam:#ff7b7b; --exam-fond:#3d2127; --auj-fond:#4d4519; }
+}
+* { box-sizing: border-box; }
+body { margin:0 auto; max-width:1180px; padding:20px 16px 40px; background:var(--page); color:var(--encre);
+  font:15px/1.45 "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif; }
+
+/* Bandeau « Cours ce soir » (inchangé) */
+#ce-soir { padding:20px; margin-bottom:18px; border-radius:12px; text-align:center; font-size:1.8rem; font-weight:bold; color:#fff; }
+#ce-soir small { display:block; margin-top:6px; font-size:1rem; font-weight:normal; }
+#ce-soir.oui { background:#2e8b57; }
+#ce-soir.non { background:#7a8098; }
+#ce-soir.oui.examen { background:#e5383b; }
+
+h1 { margin:28px 0 0; padding-bottom:8px; font-size:2.1rem; line-height:1.1; letter-spacing:-.02em; border-bottom:4px solid var(--encre); }
+#sous-titre { margin:8px 0 20px; color:var(--gris); }
+h2 { margin:36px 0 10px; font-size:1.3rem; }
+
+/* Légende : liste simple sur deux colonnes */
+#legende { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:4px 24px; margin-bottom:28px;
+  padding:10px 0; border-top:1px solid var(--trait); border-bottom:1px solid var(--trait); font-size:.85rem; }
+.pastille { display:inline-block; width:14px; height:8px; margin-right:8px; vertical-align:middle; }
+
+/* Mois : feuilles planning */
+#calendrier { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:28px 24px; }
+.mois h3 { margin:0 0 6px; font-size:1.25rem; text-transform:capitalize; }
+.jours { display:grid; grid-template-columns:repeat(7, 1fr); background:var(--feuille);
+  border-top:1px solid var(--trait); border-left:1px solid var(--trait); }
+.jours > div { border-right:1px solid var(--trait); border-bottom:1px solid var(--trait); }
+.nom-jour { padding:3px 5px; font-size:.72rem; color:var(--gris); background:var(--page); }
+
+.jour { min-height:58px; padding:3px 5px 0; font-size:.78rem; color:var(--gris); text-align:left; position:relative; }
+.jour.cours { color:var(--encre); font-weight:bold; }
+
+/* Bande de couleur de la matière, collée en bas de la case */
+.code { position:absolute; left:0; right:0; bottom:0; padding:2px 5px; color:#fff; font-size:.68rem; font-weight:bold; }
+.jour.cours .badge { position:absolute; left:5px; top:19px; font-size:.55rem; }
+
+/* Aujourd'hui : fond jaune et numéro sur pastille foncée */
+.jour.aujourdhui { background:var(--auj-fond); }
+.aujourdhui .num { display:inline-block; min-width:1.6em; padding:1px 4px; background:var(--encre); color:var(--feuille); text-align:center; }
+
+/* Examen : case entourée de rouge */
+.jour.examen { background:var(--exam-fond); outline:3px solid var(--exam); outline-offset:-3px; z-index:1; }
+.badge { color:var(--exam); font-weight:bold; }
+
+/* Liste des examens repliable */
+#liste-examens { margin-top:36px; border-top:1px solid var(--trait); border-bottom:1px solid var(--trait); }
+#liste-examens summary { padding:12px 0; font-size:1.3rem; font-weight:bold; cursor:pointer; }
+#liste-examens summary:focus-visible { outline:2px solid var(--exam); outline-offset:2px; }
+#liste-examens[open] summary { border-bottom:1px solid var(--trait); }
+#liste-examens ul { margin-bottom:8px; }
+
+/* Liste des examens : lignes pointillées */
+#examens { margin:0; padding:0; list-style:none; }
+#examens li { padding:7px 0; border-bottom:1px dotted var(--trait); }
+#examens b { color:var(--exam); }
+
+.erreur { padding:12px; border:2px solid var(--exam); background:var(--exam-fond); }
