@@ -42,6 +42,7 @@ const DATA = {
     {"date": "2026-11-16", "matiere": "LAA", "examen": false},
     {"date": "2026-11-17", "matiere": "AIA", "examen": false},
     {"date": "2026-11-18", "matiere": "COM", "examen": false},
+    {"date": "2026-11-21", "matiere": "COM", "examen": false},
     {"date": "2026-11-24", "matiere": "AIA", "examen": false},
     {"date": "2026-11-25", "matiere": "DAP", "examen": false},
     {"date": "2026-11-30", "matiere": "LAA", "examen": false},
