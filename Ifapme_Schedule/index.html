@@ -4,7 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calendrier X79 2A</title>
-  <link rel="stylesheet" href="style.css">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <script>
+    // Charge la feuille de style avec un numéro unique : pas d'ancienne version en cache.
+    var v = Date.now();
+    document.write('<link rel="stylesheet" href="style.css?v=' + v + '">');
+  </script>
 </head>
 <body>
   <div id="ce-soir"></div>
@@ -16,7 +23,10 @@
     <summary>Liste des examens</summary>
     <ul id="examens"></ul>
   </details>
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <script>
+    // Idem pour les données et le script (data.js d'abord, puis script.js).
+    document.write('<script src="data.js?v=' + v + '"><\/script>');
+    document.write('<script src="script.js?v=' + v + '"><\/script>');
+  </script>
 </body>
 </html>
